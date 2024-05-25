@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* html
+        {
+            height: 100%;
+            this is for when we add hiegth of body in 100% so we need html height 100%
+        } */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+             display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; 
+            /* line-height: 10px; */
+            width: 100%;
+        }
+
+        #scrollToTopBtn {
+            display: none; 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()"> <i class="fas fa-arrow-up"></i> </button>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Blogging Website. All rights reserved.</p>
+            Created by Mahr Abrar
+        </div>
+    </footer>
+
+    <script>
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+
+</html>

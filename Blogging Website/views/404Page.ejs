@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+</head>
+<style>
+    body {
+        width: 100%;
+    }
+    .middle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 17px;
+            /* background-color: red; */
+            text-align: center;
+        }
+
+        #404heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button a:hover {
+            text-decoration: none;
+        }
+
+</style>
+
+<body>
+    <%- include('header') %>
+        <div class="middle">
+            <h1 id="404heading">Sorry Page Not Found</h1>
+            <button> <a href="/home">Go to Home</a></button>
+        </div>
+        <%- include('footer') %>
+
+</body>
+
+</html>

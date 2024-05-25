@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        font-family: Arial, sans-serif;
+    }
+    
+    .form {
+        width: 40%;
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-direction: column;
+        /* background-color: red; */
+    }
+    
+    input, textarea {
+        padding: 6px;
+        width: 500px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+    }
+    
+    .content {
+        width: 500px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        width: 150px;
+        color: white;
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        border: none;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    button:hover {
+        background: linear-gradient(45deg, #2575fc, #6a11cb);
+        color: white;
+        cursor: pointer;
+        transform: translateY(-3px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width:900px)
+    {
+      .form{
+        width: 60%;
+      }
+    }
+   
+</style>
+
+<body>
+    <%- include('header') %>
+
+    <form action="/compose" method="post" class="form">
+        <h1>Compose</h1>
+        <input type="text" id="titleInput" name="title" placeholder="Title">
+        <textarea name="content" id="content" cols="69" rows="10" placeholder="Content Here"></textarea>
+        <button onclick="chek(event)" type="submit">Compose</button>
+    </form>
+
+    <%- include('footer') %>
+</body>
+<script>
+    function chek(event) {
+        let input = document.getElementById("titleInput");
+        let content = document.getElementById("content");
+        if (input.value === "" || content.value === "") {
+            alert("Please Enter Some Values In The Input Fields");
+            event.preventDefault();
+        }
+    }
+</script>
+</html>
